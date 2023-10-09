@@ -1,4 +1,51 @@
 .menu-class {
     height: 948px;
+}
+.search-bar{
+    text-align: center;
+    color: #fff;
+}
+
+.ant-input-group {
+    width: 278px;
+    background-color: #222222;
+    margin-top: 48px;
+    margin-left: 26px;
+
+
+    .ant-input {
+        width: 252px;
+        height: 42px;
+        margin-left:13px;
+        margin-right: 13px;
+        background: #303030;
+        border-radius: 10px;
+        text-align: center;
+        color: #fff;
+    }
+
+    .ant-input-group-addon:last-child {
+        display: none;
+    }
+}
+.ant-menu-item{
+    width: 252px;
+    margin-left: 13px;
+    margin-right: 13px;
+    text-align: left;
+}
+.ant-menu {
+    margin-bottom: 28px;
+    margin-left: 26px;
+    width: 278px;
+    height: 700px;
+    background-color: #222222;
     flex-shrink: 0;
+    .ant-menu-item-selected{
+        width: 252px;
+        margin-left: 13px;
+        margin-right: 13px;
+        text-align: left;
+    }
+    
 }

@@ -5,11 +5,10 @@ import {
   ContainerOutlined,
   DesktopOutlined,
   WechatOutlined,
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
   HomeOutlined,
 } from '@ant-design/icons';
-import { Button, Menu } from 'antd';
+import { Button, Menu, Input, Space } from 'antd';
+
 
 function getItem(label, key, icon, children, type) {
   return {
@@ -20,13 +19,16 @@ function getItem(label, key, icon, children, type) {
     type,
   };
 }
+const { Search } = Input;
+const onSearch = (value, _e, info) => console.log(info?.source, value);
+
 
 const items = [
-  getItem('Home', '1', <HomeOutlined />),
+ getItem('Home', '1', <HomeOutlined />),
   getItem('Leaderboard', '2', <DesktopOutlined />),
   getItem('Ground', '3', <ContainerOutlined />),
-  getItem('chat','4',<WechatOutlined />),
-  getItem('Notification','5',<NotificationOutlined />)
+  getItem('chat', '4', <WechatOutlined />),
+  getItem('Notification', '5', <NotificationOutlined />)
 ];
 
 function Sidebar() {
@@ -43,7 +45,7 @@ function Sidebar() {
       }}
       className='menu-class'
     >
-      <Button
+      {/* <Button
         type="primary"
         onClick={toggleCollapsed}
         style={{
@@ -51,8 +53,12 @@ function Sidebar() {
         }}
       >
         {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-      </Button>
+      </Button> */}
+      <div className='search-bar-class'>
+      <Search placeholder="search" onSearch={onSearch} className='search-bar' />
+      </div>
       <Menu
+        className='sidebar-menu'
         defaultSelectedKeys={['1']}
         defaultOpenKeys={['sub1']}
         mode="inline"
